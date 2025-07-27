@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Collaborative Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Real-Time Collaborative Whiteboard</h1>
+
+    <div id="container" class="container">
+        <div class="tool-canvas">
+            <div id="head-part" class="head-part">
+                <div class="tooltip">
+                    <button id="pencil">✏️</button>
+                    <span class="tooltiptext">Pencil</span>
+                </div>
+                <div class="tooltip">
+                    <button id="eraser">🧹</button>
+                    <span class="tooltiptext">Eraser</span>
+                </div>
+                <input type="number" name="size" id="pointer-size" min="1" max="50" value="3">
+                <label for="color">🎨</label>
+                <input type="color" name="color" id="color" value="#000000">
+                <div class="tooltip">
+                    <button id="rectangle">⬜</button>
+                    <span class="tooltiptext">Rectangle</span>
+                </div>
+                <div class="tooltip">
+                    <button id="circle">⭕</button>
+                    <span class="tooltiptext">Circle</span>
+                </div>
+                <div class="tooltip">
+                    <button id="text">T</button>
+                    <span class="tooltiptext">Text</span>
+                </div>
+                <input type="number" name="size" id="text-size" min="1" max="50" value="10">
+                <div class="tooltip">
+                    <button id="undo">↩️</button>
+                    <span class="tooltiptext">Undo</span>
+                </div>
+                <div class="tooltip">
+                    <button id="redo">↪️</button>
+                    <span class="tooltiptext">Redo</span>
+                </div>
+                <div class="tooltip">
+                    <button id="clear">🗑️</button>
+                    <span class="tooltiptext">Clear</span>
+                </div>
+            </div>
+            <div id="canvas-container" class="canvas-container">
+                <canvas id="canvas"></canvas>
+                <canvas id="temp-canvas" style="position: absolute; top: 0; left: 0; z-index: -9999;"></canvas>
+            </div>
+        </div>
+
+        <div class="chat-room">
+            <div id="room-controls" class="room-controls">
+                <input type="text" id="username" placeholder="Your name">
+                <input type="text" id="room-id" placeholder="Room ID">
+                <button id="create-room">Create Room</button>
+                <button id="join-room">Join Room</button>
+                <div id="room-status" class="room-status">Not connected</div>
+                <div id="user-list" class="user-list"></div>
+            </div>
+
+            <div id="chat-container" class="chat-container">
+                <div id="chat-messages" class="chat-messages"></div>
+                <div class="chat-input-container">
+                    <input type="text" id="chat-input" placeholder="Type a message...">
+                    <button id="send-chat">Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
