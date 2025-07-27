@@ -1,4 +1,4 @@
-const ws = new WebSocket('wss://real-time-collaborative-whiteboard-0m8p.onrender.com');
+const ws = new WebSocket('wss://real-time-collaborative-whiteboard-cuul.onrender.com');
 
 // Canvas and context setup
 const canvas = document.getElementById('canvas');
